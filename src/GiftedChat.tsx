@@ -17,7 +17,6 @@ import {
   ActionSheetOptions,
 } from '@expo/react-native-action-sheet'
 import uuid from 'uuid'
-import { SafeAreaView } from 'react-native-safe-area-context'
 import dayjs from 'dayjs'
 import localizedFormat from 'dayjs/plugin/localizedFormat'
 
@@ -875,7 +874,7 @@ class GiftedChat<TMessage extends IMessage = IMessage> extends React.Component<
   render() {
     if (this.state.isInitialized === true) {
       const { wrapInSafeArea } = this.props
-      const Wrapper = wrapInSafeArea ? SafeAreaView : View
+      const Wrapper = wrapInSafeArea ? require('react-native-safe-area-context').SafeAreaView) : View
       const actionSheet =
         this.props.actionSheet ||
         (() => this._actionSheetRef.current?.getContext()!)
