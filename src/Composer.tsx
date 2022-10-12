@@ -76,7 +76,7 @@ export function Composer({
       }
 
       if (
-        !layoutRef ||
+        layoutRef?.current === undefined ||
         (layoutRef.current &&
           (layoutRef.current.width !== layout.width ||
             layoutRef.current.height !== layout.height))
